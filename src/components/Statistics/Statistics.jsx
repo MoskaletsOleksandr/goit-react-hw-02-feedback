@@ -3,22 +3,20 @@ import { Component } from 'react';
 import { StatisticValue } from './Statistics.styled';
 import { Section } from 'components/common/Section';
 
-const { arrayOfStatsKeys, state, total, positivePercentage } = this.props;
-
 export class Statistics extends Component {
   render() {
     return (
       <Section title="Statistics">
-        {arrayOfStatsKeys.map(stat => {
+        {this.props.arrayOfStatsKeys.map(stat => {
           return (
             <StatisticValue key={stat}>
-              {stat}: {state[stat]}
+              {stat}: {this.props.state[stat]}
             </StatisticValue>
           );
         })}
-        <StatisticValue>Total: {total}</StatisticValue>
+        <StatisticValue>Total: {this.props.total}</StatisticValue>
         <StatisticValue>
-          Positive feedback: {positivePercentage}%
+          Positive feedback: {this.props.positivePercentage}%
         </StatisticValue>
       </Section>
     );
