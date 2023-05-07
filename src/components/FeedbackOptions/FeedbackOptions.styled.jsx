@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const OptionList = styled.ul`
-display: flex;
+  display: flex;
   list-style: none;
 `;
 

@@ -7,20 +7,20 @@ export class FeedbackOptions extends Component {
   render() {
     return (
       <Section title="Please leave feedback">
-            <OptionList>
-                {this.props.options.map(stat => {
-          return (
+        <OptionList>
+          {this.props.options.map(stat => {
+            return (
               <OptionItem key={stat}>
-                  <OptionButton
-              name={stat}
-              type="button"
-              onClick={this.props.onLeaveFeedback}
-            >
-              {stat}
-            </OptionButton>
-            </OptionItem>
-          );
-        })}
+                <OptionButton
+                  name={stat}
+                  type="button"
+                  onClick={this.props.onLeaveFeedback}
+                >
+                  {stat}
+                </OptionButton>
+              </OptionItem>
+            );
+          })}
         </OptionList>
       </Section>
     );
