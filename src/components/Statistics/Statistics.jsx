@@ -1,23 +1,40 @@
 // import PropTypes from 'prop-types';
 import { Component } from 'react';
-import { StatisticValue } from './Statistics.styled';
+import {
+  StatisticList,
+  StatisticItem,
+  StatisticValue,
+} from './Statistics.styled';
 import { Section } from 'components/common/Section';
+import { Notification } from 'components/Notification';
 
 export class Statistics extends Component {
   render() {
     return (
       <Section title="Statistics">
-        {this.props.arrayOfStatsKeys.map(stat => {
-          return (
-            <StatisticValue key={stat}>
-              {stat}: {this.props.state[stat]}
-            </StatisticValue>
-          );
-        })}
-        <StatisticValue>Total: {this.props.total}</StatisticValue>
-        <StatisticValue>
-          Positive feedback: {this.props.positivePercentage}%
-        </StatisticValue>
+        {!this.props.total ? (
+          <Notification message="There is no feedback" />
+        ) : (
+          <StatisticList>
+            {this.props.arrayOfStatsKeys.map(stat => {
+              return (
+                <StatisticItem key={stat}>
+                  <StatisticValue>
+                    {stat}: {this.props.state[stat]}
+                  </StatisticValue>
+                </StatisticItem>
+              );
+            })}
+            <StatisticItem>
+              <StatisticValue>Total: {this.props.total}</StatisticValue>
+            </StatisticItem>
+            <StatisticItem>
+              <StatisticValue>
+                Positive feedback: {this.props.positivePercentage}%
+              </StatisticValue>
+            </StatisticItem>
+          </StatisticList>
+        )}
       </Section>
     );
   }
