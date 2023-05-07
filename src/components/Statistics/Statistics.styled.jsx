@@ -6,4 +6,7 @@ export const StatisticList = styled.ul`
 
 export const StatisticItem = styled.li``;
 
-export const StatisticValue = styled.p``;
+export const StatisticValue = styled.p`
+&::first-letter{
+  text-transform: uppercase;
+}`;

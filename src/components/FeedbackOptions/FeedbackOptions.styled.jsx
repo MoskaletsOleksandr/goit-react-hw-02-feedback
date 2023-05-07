@@ -9,4 +9,6 @@ export const OptionItem = styled.li``;
 
 export const OptionButton = styled.button`
   cursor: pointer;
+  &::first-letter{
+  text-transform: uppercase;
 `;
