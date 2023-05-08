@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 import { SectionStyled } from './Section.styled';
 import { SectionTitle } from '../SectionTitle';
 
-export const Section = ({ title, children }) => {
+export const Section = ({ title, children, positivePercentage, total }) => {
   return (
-    <SectionStyled>
+    <SectionStyled positivePercentage={positivePercentage} total={total}>
       <SectionTitle title={title} />
       {children}
     </SectionStyled>
@@ -13,5 +13,5 @@ export const Section = ({ title, children }) => {
 
 Section.propTypes = {
   title: PropTypes.string.isRequired,
-  children: PropTypes.object.isRequired
-}
+  children: PropTypes.object.isRequired,
+};

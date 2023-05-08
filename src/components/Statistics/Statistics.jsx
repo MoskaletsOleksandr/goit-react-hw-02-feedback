@@ -40,10 +40,8 @@ export class Statistics extends Component {
 }
 
 Statistics.propTypes = {
-  state: PropTypes.objectOf(
-    PropTypes.number
-  ).isRequired,
+  state: PropTypes.objectOf(PropTypes.number).isRequired,
   arrayOfStatsKeys: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
   total: PropTypes.number.isRequired,
-  positivePercentage: PropTypes.number.isRequired
-}
+  positivePercentage: PropTypes.number.isRequired,
+};
