@@ -1,17 +1,16 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Component } from 'react';
 import {
   StatisticList,
   StatisticItem,
   StatisticValue,
 } from './Statistics.styled';
-import { Section } from 'components/common/Section';
 import { Notification } from 'components/Notification';
 
 export class Statistics extends Component {
   render() {
     return (
-      <Section title="Statistics">
+      <div>
         {!this.props.total ? (
           <Notification message="There is no feedback" />
         ) : (
@@ -35,7 +34,16 @@ export class Statistics extends Component {
             </StatisticItem>
           </StatisticList>
         )}
-      </Section>
+      </div>
     );
   }
+}
+
+Statistics.propTypes = {
+  state: PropTypes.objectOf(
+    PropTypes.number
+  ).isRequired,
+  arrayOfStatsKeys: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.number.isRequired
 }
